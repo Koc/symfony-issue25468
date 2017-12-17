@@ -1,0 +1,11 @@
+
+###> symfony/framework-bundle ###
+.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+/docker/mount/.env
+/docker/docker-compose.override.yaml
+/docker/mount/var/

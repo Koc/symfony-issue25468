@@ -1,0 +1,19 @@
+version: '3'
+services:
+    issue25468-web:
+        image: brouzie/php:7.1
+        container_name: issue25468-web
+        hostname: issue25468-web
+        volumes:
+            - composer-cache-volume:/home/dev/.composer/cache
+            - ./mount/var/log/apache2:/var/log/apache2
+            - ./mount/etc/apache2/sites-enabled:/etc/apache2/sites-enabled
+            - ./..:/var/www/html
+        environment:
+            PASSWORD: 112233
+            EXPOSE_HOSTS: |-
+                issue25468.dev
+
+volumes:
+    composer-cache-volume:
+        external: true
